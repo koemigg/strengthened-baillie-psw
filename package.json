@@ -1,0 +1,25 @@
+{
+  "name": "bailie-psw",
+  "version": "1.0.0",
+  "description": "Test if a number is a prime using Strengthening the Baillie-PSW primality test.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harxxki/bailie-psw.git"
+  },
+  "keywords": [
+    "prime",
+    "isPrime",
+    "isPrbablePrime",
+    "Baillie-PSW"
+  ],
+  "author": "Haruki <haruki4dev@gmail.com> (https://github.com/Harxxki)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Harxxki/bailie-psw/issues"
+  },
+  "homepage": "https://github.com/Harxxki/bailie-psw#readme"
+}

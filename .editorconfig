@@ -1,0 +1,27 @@
+# top-most EditorConfig file
+root = true
+
+# 全てのファイルを対象とする。
+[*]
+
+# インデントのスタイルの設定
+indent_style = space
+
+# インデントのサイズの設定
+indent_size = 2
+
+# 改行コードの設定
+end_of_line = lf
+
+# 文字コードの設定
+charset = utf-8
+
+# 文末にスペースを取り除く設定
+trim_trailing_whitespace = true
+
+# 最後の行を改行の設定
+insert_final_newline = true
+
+# マークダウン記法のみ左右のspaceを許可する
+[*.md]
+trim_trailing_whitespace = false
