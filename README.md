@@ -12,24 +12,49 @@ npm i bailie-psw
 ## Usage
 
 ```
-const isProbablePrime = require('@bailie-psw/isProbablePrime')
-console.log(isProbablePrime(17)) // true
+const bailiePSW = require('@bailie-psw/isProbablePrime')
 ```
+
+#### isProbablePrime ( value )
+```
+console.log(bailiePSW.isProbablePrime(17)) // true
+```
+
+#### probablePrime ( bitLength )
+ Generates a "prime-like" random number with bit length given by `bitLength`.
+```
+console.log(bailiePSW.probablePrime()) //
+```
+
+#### nextProbablePrime ( value )
+Generates the smallest prime number over `value`.
+```
+```
+
+#### rand ( bitLength )
+Generates a random number with the bit length given by `bitLength`.
+```
+```
+
+#### safePrimeRand ( value )
+Judges `value` to be prime number and generates safe prime number from `value`.
+```
+```
+
 
 ## Test
 
-```
-npm test
-```
+Coming soon.
 
 ## License
-[MIT License](https://github.com/Harxxki/bailie-psw/blob/master/LICENSE)
+See [LICENSE](https://github.com/Harxxki/bailie-psw/blob/master/LICENSE).
 
 ## Author
-Nanako OKADA  
+Nanako OKADA
 Haruki MORI ([@Harxxki](https://github.com/Harxxki))
 
-See also: Robert Baillie, Andrew Fiori, and Samuel S Wagstaff Jr,
+## See Also
+Robert Baillie, Andrew Fiori, and Samuel S Wagstaff Jr,
 Strengthening the Baillie-PSW primality test,
 Mathematics of Computation, Volume 90, Number 330,
 July 2021, pp. 1931--1955.
