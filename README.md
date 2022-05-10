@@ -49,7 +49,7 @@ Coming soon.
 See [LICENSE](https://github.com/Harxxki/bailie-psw/blob/master/LICENSE).
 
 ## Author
-Nanako OKADA
+Nanako OKADA  
 Haruki MORI ([@Harxxki](https://github.com/Harxxki))
 
 ## See Also
