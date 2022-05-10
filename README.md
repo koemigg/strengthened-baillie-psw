@@ -1,4 +1,4 @@
-# Baillie-PSW
+# Strengthening Baillie-PSW
 Test if a number is a prime using **Strengthening the Baillie-PSW primality test**.
 
 A prime number is defined as an integer value greater than `1` which is only divisible by `1` and itself.
@@ -40,7 +40,6 @@ Generates a random number with the bit length given by `bitLength`.
 Judges `value` to be prime number and generates safe prime number from `value`.
 ```
 ```
-
 
 ## Test
 
