@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>テスト</title>
+    <link rel="stylesheet" type="text/css" href="wraptest.css" />
+  </head>
+  <body>
+    <div class="SimpleFrame" id="a"></div>
+    <div class="SimpleFrame" id="b"></div>
+    <div class="SimpleFrame" id="c"></div>
+    <script type="module">
+      import * as Prime from './main.js';
+
+      let e1 = document.getElementById('a');
+      let e2 = document.getElementById('b');
+      let e3 = document.getElementById('c');
+
+      let x = Prime.rand(1024);
+
+      e1.textContent = "1024ビットの乱数：" + x;
+      e2.textContent = "判定結果：" + Prime.isProbablePrime(x);
+      e3.textContent = "乱数以上の最小の素数：" + Prime.nextProbablePrime(x);
+    </script>
+  </body>
+</html>
