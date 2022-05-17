@@ -1,5 +1,5 @@
 # Strengthening Baillie-PSW
-Test if a number is a prime using **Strengthening the Baillie-PSW primality test**.
+Test if a number is a prime based on **Strengthening the Baillie-PSW primality test**[^1].
 
 A prime number is defined as an integer value greater than `1` which is only divisible by `1` and itself.
 
@@ -53,7 +53,7 @@ Nanako OKADA
 Haruki MORI ([@Harxxki](https://github.com/Harxxki))
 
 ## See Also
-Robert Baillie, Andrew Fiori, and Samuel S Wagstaff Jr,
+[^1]: Robert Baillie, Andrew Fiori, and Samuel S Wagstaff Jr,
 Strengthening the Baillie-PSW primality test,
 Mathematics of Computation, Volume 90, Number 330,
 July 2021, pp. 1931--1955.
