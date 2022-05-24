@@ -50,7 +50,6 @@ Generates a probable safe prime from the smallest probable prime number greater 
 Coming soon.
 
 ## License
-Released under the MIT license.
 See [LICENSE](https://github.com/Harxxki/bailie-psw/blob/master/LICENSE).
 
 ## Author
