@@ -7,7 +7,6 @@ Mathematics of Computation, Volume 90, Number 330,
 July 2021, pp. 1931--1955.
 Also available at https://arxiv.org/abs/2006.14425 .
 
-
 ## Installation
 
 ```
@@ -26,7 +25,7 @@ console.log(sbpsw.isProbablePrime(17)) // true
 ```
 
 #### probablePrime ( bitLength )
-Randomly generates a probable prime number with the bit length specified by `bitLength`.
+Randomly generates a probable prime number of `bitLength`.
 ```
 console.log(sbpsw.probablePrime()) //
 ```
@@ -37,7 +36,7 @@ Generates the smallest probable prime number greater than or equal to `value`.
 ```
 
 #### rand ( bitLength )
-Generates a random number with the bit length specified by `bitLength`.
+Generates a random number of `bitLength`.
 ```
 ```
 
