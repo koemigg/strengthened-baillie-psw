@@ -1,6 +1,5 @@
 # Strengthened Baillie-PSW
-JavaScript module for probabilistic primality test and probable prime generation
-based on **Strengthening the Baillie-PSW primality test**[^1].
+npm package for probabilistic primality test and probable prime generation based on **Strengthening the Baillie-PSW primality test**[^1].
 
 [^1]: Robert Baillie, Andrew Fiori, and Samuel S Wagstaff Jr,
 Strengthening the Baillie-PSW primality test,
