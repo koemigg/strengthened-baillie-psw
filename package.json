@@ -2,7 +2,10 @@
   "name": "s-bpsw",
   "version": "1.0.0",
   "description": "Test if a number is a prime using Strengthening the Baillie-PSW primality test.",
-  "main": "main.js",
+  "bin": {
+    "s-bpsw": "index.js"
+  },
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
