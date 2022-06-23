@@ -138,26 +138,6 @@ const modPow = (b, exp, m) => {
   return r
 }
 
-// /**
-//  * Computes modular exponentiation with base 2
-//  *
-//  * @type {(number | bigint)}  exp - exponent
-//  * @param {bigint} m - modulus
-//  * @return {bigint} r - 2^exp (mod m)
-//  */
-// const modPow2 = (exp, m) => {
-//   let r = 2n;
-//   const e = exp.toString(2).split("");
-//   const k = e.length;
-//   for(let i=1; i<k; i++){
-//     r = (r * r) % m;
-//     if(e[i] === '1'){
-//       r = (r << 1n) % m;
-//     }
-//   }
-//   return r;
-// };
-
 /**
  * Computes Jacobi symbol
  *
@@ -169,7 +149,6 @@ const jacobi = (a, p) => {
   let j = 1 //結果
   if (p === 1n) return 1
   if (a % p === 0n) return 0
-  //aが負の場合，第1補充法則より正にする
   if (a < 0n) {
     a = -a
     if ((p & 3n) === 3n) {
@@ -231,8 +210,6 @@ const millerRabin = (n, a) => {
   let s = 0
   let t = 0n
 
-  //ミラーラビンテスト
-  //sとtを求める
   t = n - 1n
   do {
     t = t >> 1n
@@ -243,57 +220,10 @@ const millerRabin = (n, a) => {
   if (r === 1n) return true
   for (let i = 0; i < s; i++) {
     if (r === n - 1n) return true
-    // r = modPow(r,2n,n);
     r = (r * r) % n
   }
   return false
 }
-
-// /** Miller-Rabin primaliry test with base 2
-// *
-// * @param {bigint} n - odd number >=3
-// * @return {boolean} - true: probable prime, false: composite
-// */
-// const millerRabin2 = (n) => {
-//   let r = 0n;
-//   let s = 0;
-//   let t = 0n;
-//
-//   //ミラーラビンテスト
-//   //sとtを求める
-//   t = n - 1n;
-//   do{
-//     t = t >> 1n;
-//     s = s + 1;
-//   }while((t & 1n) === 0n)
-//
-//   r = modPow2(t,n);
-//   if(r === 1n)
-//     return true;
-//   for(let i=0; i<s; i++){
-//     if(r === (n-1n))
-//       return true;
-//     // r = modPow(r,2n,n);
-//     r = (r * r) % n;
-//   }
-//   return false;
-// };
-// ミラー・ラビンテストを複数回行う
-// Repeats Miller-Rabin test with distinct bases
-// const millerRabinTest = (n) => {
-//   const base = [2n, 3n, 5n, 7n, 11n, 13n, 17n]; // 底
-//   // 底2に関して
-//   // For base 2
-//   // if(millerRabin2(n) === false)
-//   //   return false;
-//   // 底baseに関して
-//   // For bases other than 2
-//   for(const a of base){
-//     if(millerRabin(n, a) === false)
-//       return false;
-//   }
-//   return true;
-// };
 
 /** Strengthened Baillie-PSW primality test
  *
@@ -406,98 +336,6 @@ const bailliePSW = (n) => {
     return false
   }
 }
-// // 元のbailliePSW
-// // Original bailllie-PSW primality test
-// const originalBailliePSW = (n) => {
-//   let check = false; //判定 result
-//   let t = 0n; //n+1=t2^s
-//   let s = 0;
-//   let d = 5n; //パラメータ parameter
-//   let p = 1n;
-//   let q = 0n;
-//   let u0 = 0n; //リュカ数列 Lucas sequences
-//   let v0 = 2n;
-//   let u1 = 1n;
-//   let v1 = 1n;
-//   let q_l = 0n;//オイラー基準テストの左辺 left-hand side of Euler's criterion
-//   let q_r = 0n; //右辺 right-hand side of Euler's criterion
-//   // 底2のミラー・ラビンテスト
-//   // Miller-Rabin test with base 2
-//   if(millerRabin(n,2n) === false)
-//     return false;
-//
-//   //sとtを求める
-//   // Finds s and t satisfying n+1 = t2^s
-//   t = n + 1n;
-//   do{
-//     t = t >> 1n;
-//     s = s + 1;
-//   }while((t & 1n) === 0n)
-//   //nが平方数の場合
-//   // if n is a quadratic residue
-//   if(square(n))
-//     return false;
-//   //D,Qを求める
-//   // Computes D and Q
-//   while(jacobi(d,n) !== -1){
-//     if(d > 0n)
-//       d = -(d + 2n);
-//     else
-//       d = -(d - 2n);
-//   }
-//   if(d === 5n){  //d=5つまりq=-1のとき d=5 implies q=-1
-//     p = 5n;
-//     q = 5n;
-//     v1 = 5n;
-//   }else{
-//     q = (1n - d) >> 2n;
-//   }
-//   //リュカテスト
-//   // Lucas primality test
-//   const bit = (n + 1n).toString(2).split("");
-//   //n+1を2進数の文字列にして1文字ずつ区切り,配列にする
-//   // Converts n+1 to a binary string and stores it in an array with each character as its element
-//   const length = bit.length - 1; //bit数の最後 last bit number
-//   const tLength = length - s; //tのbit数 bit length of t
-//   for(let i=1; i<=length; i++){ //添え字1→2(bit[1])の計算から始まる
-//     //bitが0,1にかかわらず必ずやる計算
-//     // Starts calculation with subscript 1->2(bit[1])
-//     // Always executed regardless of bit value
-//     u0 = (u1 * v1) % n;
-//     v0 = v1 * v1 + d * u1 * u1;
-//     if((v0 & 1n) != 0n){//vが奇数の場合
-//       //vは奇数なのでこれでvは偶数になる
-//       // if v is odd, then add n to make v even
-//       v0 = v0 + n;
-//     }
-//     v0 = (v0 >> 1n) % n;
-//     u1 = u0;
-//     v1 = v0;
-//     //bitが1のときの計算
-//     // Calculation for the case where a bit in question is 1
-//     if(bit[i] === '1'){
-//       u1 = p * u0 + v0;
-//       if((u1 & 1n) != 0n){//uが奇数の場合 if u is odd
-//         u1 = u1 + n;
-//       }
-//       u1 = (u1 >> 1n) % n;
-//       v1 = d * u0 + p * v0;
-//       if((v1 & 1n) != 0n){//vが奇数の場合 if v is odd
-//         v1 = v1 + n;
-//       }
-//       v1 = (v1 >> 1n) % n;
-//     }
-//     //強いリュカテスト
-//     // Strong Lucas probable prime test
-//     if(i < tLength){}
-//     else if(i === tLength){
-//       if((u1 === 0n) || (v1 === 0n))
-//         return true;
-//     }else if((i < length) && (v1 === 0n))
-//       return true;
-//   }
-//   return false;
-// };
 
 /** Primality test by strengthened Baillie-PSW
  *
@@ -505,7 +343,7 @@ const bailliePSW = (n) => {
  * @return {boolean} - true: probable prime, false: composite
  */
 const isProbablePrime = (n) => {
-  // 小さい素数で割り切れるならfalseを返す
+  // Return false if divisible by a small prime
   for (const e of smallPrime) {
     if (n === e) return true
     else if (n % e === 0n) return false
