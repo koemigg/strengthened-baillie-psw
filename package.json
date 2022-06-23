@@ -1,5 +1,5 @@
 {
-  "name": "bailie-psw",
+  "name": "s-bpsw",
   "version": "1.0.0",
   "description": "Test if a number is a prime using Strengthening the Baillie-PSW primality test.",
   "main": "main.js",
