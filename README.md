@@ -55,3 +55,4 @@ See [LICENSE](https://github.com/Harxxki/bailie-psw/blob/master/LICENSE).
 ## Author
 Nanako OKADA  
 Haruki MORI ([@Harxxki](https://github.com/Harxxki))
+Miwako MISHIMA ([@m-miwako](https://github.com/m-miwako))
