@@ -1,5 +1,3 @@
-'use strict'
-
 const smallPrime = [
   2n,
   3n,

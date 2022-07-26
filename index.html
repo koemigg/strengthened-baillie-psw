@@ -9,18 +9,24 @@
     <div class="SimpleFrame" id="a"></div>
     <div class="SimpleFrame" id="b"></div>
     <div class="SimpleFrame" id="c"></div>
+    <div class="SimpleFrame" id="d"></div>
+    <div class="SimpleFrame" id="e"></div>
     <script type="module">
       import * as Prime from './index.js';
 
       let e1 = document.getElementById('a');
       let e2 = document.getElementById('b');
       let e3 = document.getElementById('c');
+      let e4 = document.getElementById('d');
+      let e5 = document.getElementById('e');
 
-      let x = Prime.rand(1024);
+      const bits = 32
+      let x = Prime.rand(bits);
 
-      e1.textContent = "1024ビットの乱数：" + x;
-      e2.textContent = "判定結果：" + Prime.isProbablePrime(x);
-      e3.textContent = "乱数以上の最小の素数：" + Prime.nextProbablePrime(x);
+      e1.textContent = bits + "ビットの乱数: " + x;
+      e2.textContent = "判定結果: " + Prime.isProbablePrime(x);
+      e3.textContent = "乱数以上の最小の素数: " + Prime.nextProbablePrime(x);
+      e4.textContent = "nextProbablePrimeBit(" + bits + " bit)" + Prime.nextProbablePrimeBit(BigInt(x));
     </script>
   </body>
 </html>
