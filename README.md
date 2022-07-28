@@ -17,20 +17,10 @@ npm i s-bpsw
 
 ## Importing
 
-#### Node.js - require
-
 ```javascript
 import { isProbablePrime, probablePrime, nextProbablePrime } from 's-bpsw'
 // or import all of the module's function
 // import * as sbpsw from 's-bpsw'
-// usage:
-// console.log(sbpsw.isProbablePrime(17)) // True
-```
-
-#### Node.js - ES6 or TypeScript
-
-```javascript
-const sbpsw = require('s-bpsw')
 // usage:
 // console.log(sbpsw.isProbablePrime(17)) // True
 ```
