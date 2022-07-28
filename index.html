@@ -26,8 +26,8 @@
       e1.textContent = bits + "ビットの乱数: " + x;
       e2.textContent = "判定結果: " + Prime.isProbablePrime(x);
       e3.textContent = "乱数以上の最小の素数: " + Prime.nextProbablePrime(x);
-      e4.textContent = "乱数" + Prime.rand(x);
-      e4.textContent = "nextProbablePrimeBit(" + bits + " bit)" + Prime.nextProbablePrimeBit(x);
+      e4.textContent = "乱数" + Prime.rand(bits);
+      e4.textContent = "nextProbablePrime(" + bits + " bit)" + Prime.nextProbablePrime(x);
     </script>
   </body>
 </html>
