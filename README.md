@@ -15,7 +15,7 @@ npm package for probabilistic primality test and probable prime generation based
 npm i s-bpsw
 ```
 
-## Importing
+## Importing (Node.js - ES6 or TypeScript)
 
 ```javascript
 import { isProbablePrime, probablePrime, nextProbablePrime } from 's-bpsw'
