@@ -15,22 +15,12 @@ npm package for probabilistic primality test and probable prime generation based
 npm i s-bpsw
 ```
 
-## Importing
-
-#### Node.js - require
+## Importing (Node.js - ES6 or TypeScript)
 
 ```javascript
 import { isProbablePrime, probablePrime, nextProbablePrime } from 's-bpsw'
 // or import all of the module's function
 // import * as sbpsw from 's-bpsw'
-// usage:
-// console.log(sbpsw.isProbablePrime(17)) // True
-```
-
-#### Node.js - ES6 or TypeScript
-
-```javascript
-const sbpsw = require('s-bpsw')
 // usage:
 // console.log(sbpsw.isProbablePrime(17)) // True
 ```
@@ -48,9 +38,9 @@ console.log(isProbablePrime(3616199781)) // False
 
 Randomly generates a probable prime number of `bitLength`.
 
-```javascript
+<!-- ```javascript
 
-```
+``` -->
 
 #### nextProbablePrime ( value )
 
