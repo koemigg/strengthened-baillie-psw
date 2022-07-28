@@ -38,9 +38,9 @@ console.log(isProbablePrime(3616199781)) // False
 
 Randomly generates a probable prime number of `bitLength`.
 
-```javascript
+<!-- ```javascript
 
-```
+``` -->
 
 #### nextProbablePrime ( value )
 
